@@ -97,8 +97,8 @@ public class Zapusk extends JFrame {
 			public void actionPerformed(ActionEvent e) {  
 				if (login.getText().equals(slogin) && pass.getText().equals(spass)) {		
 						dispose();	
-						//Window click = new Window();
-						//click.setVisible(true);
+						Window click = new Window();
+						click.setVisible(true);
 				} else {
 					login.setBackground(Color.PINK);
 					pass.setBackground(Color.PINK);
