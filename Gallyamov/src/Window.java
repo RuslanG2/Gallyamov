@@ -16,13 +16,13 @@ public class Window extends JFrame {
 	Raschet r = new Raschet();
 	
 	
-	JComboBox comboBox0 = new JComboBox(r.items0);
-	JComboBox comboBox = new JComboBox(r.items);
-	JComboBox comboBox2 = new JComboBox(r.items2);
-	JComboBox comboBox3 = new JComboBox(r.items3);
-	JComboBox comboBox4 = new JComboBox(r.items4);
-	JComboBox comboBox5 = new JComboBox(r.items5);
-	JComboBox comboBox6 = new JComboBox(r.items6);
+	JComboBox<String> comboBox0 = new JComboBox<String>(r.items0);
+	JComboBox<String> comboBox = new JComboBox<String>(r.items);
+	JComboBox<String> comboBox2 = new JComboBox<String>(r.items2);
+	JComboBox<String> comboBox3 = new JComboBox<String>(r.items3);
+	JComboBox<String> comboBox4 = new JComboBox<String>(r.items4);
+	JComboBox<String> comboBox5 = new JComboBox<String>(r.items5);
+	JComboBox<String> comboBox6 = new JComboBox<String>(r.items6);
 	
 	//Кнопки
 	private JButton button = new JButton ("Расчитать");

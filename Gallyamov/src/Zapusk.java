@@ -8,6 +8,7 @@ import java.util.*;
 
 public class Zapusk extends JFrame {
 	
+
 	public JLabel log= new JLabel("Логин") ;
 	public JLabel password = new JLabel("Пароль") ;
 
@@ -27,10 +28,10 @@ public class Zapusk extends JFrame {
 	
 	public Zapusk() throws FileNotFoundException {
 		setTitle("Вход в приложение"); 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 150, 350, 200);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// завершить процесс
+		setBounds(100, 150, 350, 200);// координты появнления; ширина высота
 		Container panel = this.getContentPane();
-		panel.setLayout(new GridLayout(4, 2, 21, 10));
+		panel.setLayout(new GridLayout(4, 2, 21, 10));//ряды колонки отступы верт гор
 		
 
 		
@@ -96,7 +97,7 @@ public class Zapusk extends JFrame {
 		enter.addActionListener(new ActionListener() {                                                         
 			public void actionPerformed(ActionEvent e) {  
 				if (login.getText().equals(slogin) && pass.getText().equals(spass)) {		
-						dispose();	
+						dispose();//закрывает окно
 						Window click = new Window();
 						click.setVisible(true);
 				} else {
