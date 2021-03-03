@@ -97,7 +97,7 @@ public class Window extends JFrame {
                 tb=r.answer(item0);
                 km=r.answer(item3);
                 ko=r.answer(item4);
-                kt=1.8;
+                kt=1.72;
                 kp=r.answer(item5);
                 kbm=r.answer(item6);
                 

@@ -98,7 +98,7 @@ public class Raschet {
 	        	 koef = 4227;
 	            break;
 	        case "Автобусы с числом пассажирских мест до 16":
-	            koef = 2667;
+	            koef = 2134;
 	            break;
 	        case "Троллейбусы":
 	        	 koef = 2134;
@@ -134,7 +134,7 @@ public class Raschet {
 	        	 koef = 1;
 	            break;
 	        case  "Неограниченная":
-	        	 koef = 1.87;
+	        	 koef = 1.94;
 	            break;
 	        
 	            
