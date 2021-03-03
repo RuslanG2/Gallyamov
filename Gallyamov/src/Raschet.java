@@ -15,14 +15,25 @@ public class Raschet {
 	
 	public String[] items = {
 			"Выбрать",
-		    "Меньше 22 лет",
-		    "Больше 22 лет"   
+		    "16-21 лет",
+		    "22-24 лет",  
+		    "25-29 лет",
+		    "30-34 лет",  
+		    "35-39 лет",
+		    "40-49 лет",  
+		    "50-59 лет"
 		};
 	
 	public String[] items2 = {
 			"Выбрать",
-		    "Менее 3 лет",
-		    "Более 3 лет"   
+		    "0 лет",
+		    "1 лет",  
+		    "2 лет",
+		    "3-4 лет",  
+		    "5-6 лет",
+		    "7-9 лет",  
+		    "10-14 лет",
+		    "более 14 лет"
 		};
 	public String[] items3 = {
 			"Выбрать",
@@ -76,6 +87,250 @@ public class Raschet {
 		    "класс 13"
 		};
 	
+	public double answerAge1621(String otvet) {
+		 double koef=0;
+	        switch (otvet) {
+	        case "0 лет":
+	            koef = 1.93;
+	            break;
+	        case "1 лет":
+	            koef = 1.90;
+	            break;
+	        case "2 лет":
+	            koef = 1.87;
+	            break;
+	        case "3-4 лет":
+	            koef = 1.66;
+	            break;
+	        case  "5-6 лет":
+	            koef = 1.64;
+	            break;
+	        case "7-9 лет":
+	            koef = 1.64;
+	            break;
+	        case "10-14 лет":
+	            koef = 1.64;
+	            break;
+	        case "более 14 лет":
+	            koef = 1.64;
+	            break;
+	    
+	           
+	        default:
+	            koef=0;
+	        }
+			return koef;
+	    }
+	public double answerAge2224(String otvet) {
+		 double koef=0;
+	        switch (otvet) {
+	        case "0 лет":
+	            koef = 1.79;
+	            break;
+	        case "1 лет":
+	            koef = 1.77;
+	            break;
+	        case "2 лет":
+	            koef = 1.76;
+	            break;
+	        case "3-4 лет":
+	            koef = 1.08;
+	            break;
+	        case  "5-6 лет":
+	            koef = 1.06;
+	            break;
+	        case "7-9 лет":
+	            koef = 1.06;
+	            break;
+	        case "10-14 лет":
+	            koef = 1.06;
+	            break;
+	        case "более 14 лет":
+	            koef = 1.06;
+	            break;
+	    
+	           
+	        default:
+	            koef=0;
+	        }
+			return koef;
+	    }
+	
+	public double answerAge2529(String otvet) {
+		 double koef=0;
+	        switch (otvet) {
+	        case "0 лет":
+	            koef = 1.77;
+	            break;
+	        case "1 лет":
+	            koef = 1.68;
+	            break;
+	        case "2 лет":
+	            koef = 1.61;
+	            break;
+	        case "3-4 лет":
+	            koef = 1.06;
+	            break;
+	        case  "5-6 лет":
+	            koef = 1.05;
+	            break;
+	        case "7-9 лет":
+	            koef = 1.05;
+	            break;
+	        case "10-14 лет":
+	            koef = 1.01;
+	            break;
+	        case "более 14 лет":
+	            koef = 1.01;
+	            break;
+	    
+	           
+	        default:
+	            koef=0;
+	        }
+			return koef;
+	    }
+	
+	public double answerAge3034(String otvet) {
+		 double koef=0;
+	        switch (otvet) {
+	        case "0 лет":
+	            koef = 1.62;
+	            break;
+	        case "1 лет":
+	            koef = 1.61;
+	            break;
+	        case "2 лет":
+	            koef = 1.59;
+	            break;
+	        case "3-4 лет":
+	            koef = 1.04;
+	            break;
+	        case  "5-6 лет":
+	            koef = 1.04;
+	            break;
+	        case "7-9 лет":
+	            koef = 1.01;
+	            break;
+	        case "10-14 лет":
+	            koef = 0.96;
+	            break;
+	        case "более 14 лет":
+	            koef = 0.95;
+	            break;
+	    
+	           
+	        default:
+	            koef=0;
+	        }
+			return koef;
+	    }
+	
+	public double answerAge3539(String otvet) {
+		 double koef=0;
+	        switch (otvet) {
+	        case "0 лет":
+	            koef = 1.61;
+	            break;
+	        case "1 лет":
+	            koef = 1.59;
+	            break;
+	        case "2 лет":
+	            koef = 1.58;
+	            break;
+	        case "3-4 лет":
+	            koef = 0.99;
+	            break;
+	        case  "5-6 лет":
+	            koef = 0.96;
+	            break;
+	        case "7-9 лет":
+	            koef = 0.95;
+	            break;
+	        case "10-14 лет":
+	            koef = 0.95;
+	            break;
+	        case "более 14 лет":
+	            koef = 0.94;
+	            break;
+	    
+	           
+	        default:
+	            koef=0;
+	        }
+			return koef;
+	    }
+	
+	public double answerAge4049(String otvet) {
+		 double koef=0;
+	        switch (otvet) {
+	        case "0 лет":
+	            koef = 1.59;
+	            break;
+	        case "1 лет":
+	            koef = 1.58;
+	            break;
+	        case "2 лет":
+	            koef = 1.57;
+	            break;
+	        case "3-4 лет":
+	            koef = 0.95;
+	            break;
+	        case  "5-6 лет":
+	            koef = 0.95;
+	            break;
+	        case "7-9 лет":
+	            koef = 0.94;
+	            break;
+	        case "10-14 лет":
+	            koef = 0.94;
+	            break;
+	        case "более 14 лет":
+	            koef = 0.94;
+	            break;
+	    
+	           
+	        default:
+	            koef=0;
+	        }
+			return koef;
+	    }
+	
+	public double answerAge5059(String otvet) {
+		 double koef=0;
+	        switch (otvet) {
+	        case "0 лет":
+	            koef = 1.58;
+	            break;
+	        case "1 лет":
+	            koef = 1.57;
+	            break;
+	        case "2 лет":
+	            koef = 1.56;
+	            break;
+	        case "3-4 лет":
+	            koef = 0.94;
+	            break;
+	        case  "5-6 лет":
+	            koef = 0.94;
+	            break;
+	        case "7-9 лет":
+	            koef = 0.94;
+	            break;
+	        case "10-14 лет":
+	            koef = 0.94;
+	            break;
+	        case "более 14 лет":
+	            koef = 0.93;
+	            break;
+	    
+	           
+	        default:
+	            koef=0;
+	        }
+			return koef;
+	    }
+
 	
 	
 	public double answer(String otvet) {

@@ -4,6 +4,9 @@ import javax.swing.*;
 
 
 public class Window extends JFrame {
+
+	 
+	
 	//поля
 	private double tb; //базовый тариф 
 	private double kbc;// коэффициент возраста и стажа 
@@ -14,6 +17,8 @@ public class Window extends JFrame {
 	private double kbm;//  коэффициент бонус-малус
 
 	Raschet r = new Raschet();
+	
+	
 	
 	
 	JComboBox<String> comboBox0 = new JComboBox<String>(r.items0);
@@ -76,23 +81,38 @@ public class Window extends JFrame {
                 String item6 = (String) comboBox6.getSelectedItem();// получаем выбор
                 
               kbc=0;
-         if(item=="Меньше 22 лет") {
-        	 if(item2 == "Менее 3 лет") {
-        		 kbc =1.8;
-        	 } 
-        	 if(item2 == "Более 3 лет") {
-         		kbc= 1.6;}
-   
+              
+              
+            
+            
+  	
+  		    
+  		   
+  		   
+              
+         if(item=="16-21 лет") {
+        		 kbc =r.answerAge1621(item2);
          } 
-        
-       
-         if(item=="Больше 22 лет") {
-        	 if(item2 == "Менее 3 лет") {
-        		 kbc =1.7;}
-        	 if(item2 == "Более 3 лет") {
-        	  kbc =1.0;}   
-         } 
-                
+              if(item=="22-24 лет") {
+         		 kbc =r.answerAge2224(item2);
+          } 
+              if(item=="25-29 лет") {
+         		 kbc =r.answerAge2529(item2);
+          } 
+              if(item=="30-34 лет") {
+         		 kbc =r.answerAge3034(item2);
+          } 
+              if(item== "35-39 лет") {
+         		 kbc =r.answerAge3539(item2);
+          } 
+              if(item== "40-49 лет") {
+         		 kbc =r.answerAge4049(item2);
+          } 
+              if(item== "50-59 лет") {
+          		 kbc =r.answerAge5059(item2);
+           } 
+         
+     
                 
                 tb=r.answer(item0);
                 km=r.answer(item3);
