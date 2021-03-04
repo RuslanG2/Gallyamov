@@ -40,7 +40,7 @@ public class Zapusk extends JFrame {
 		login = new JTextField("¬ведите логин");
 	
 		
-		sc = new Scanner(new File("src/pass.txt"));
+		sc = new Scanner(new File("Gallyamov/src/pass.txt"));
 		String slogin, spass;
 		slogin = sc.nextLine();
 		spass = sc.nextLine();
