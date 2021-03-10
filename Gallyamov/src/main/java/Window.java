@@ -23,6 +23,8 @@ public class Window extends JFrame {
 	
 	
 	JComboBox<String> comboBox0 = new JComboBox<String>(r.items0);
+	JComboBox<String> comboBox01 = new JComboBox<String>(r.items01);
+	JComboBox<String> comboBox02 = new JComboBox<String>(r.items02);
 	JComboBox<String> comboBox = new JComboBox<String>(r.items);
 	JComboBox<String> comboBox2 = new JComboBox<String>(r.items2);
 	JComboBox<String> comboBox3 = new JComboBox<String>(r.items3);
@@ -53,8 +55,17 @@ public class Window extends JFrame {
 		Container cont = this.getContentPane();
 		cont.setLayout(new GridLayout(10, 2, 2, 10));//ряды колонки отступы верт гор
 		
+		
+		
+		
+		System.out.println(Zapusk.whatalog);
 		cont.add(label0);
-		cont.add(comboBox0);
+		if(Zapusk.whatalog.equalsIgnoreCase("user1")) {
+		cont.add(comboBox01);}
+		if(Zapusk.whatalog.equalsIgnoreCase("user2")) {
+			cont.add(comboBox02);}
+		if(Zapusk.whatalog.equalsIgnoreCase("admin")) {
+			cont.add(comboBox0);}
 		cont.add(label);
 		cont.add(comboBox);
 		cont.add(label1);
@@ -71,6 +82,8 @@ public class Window extends JFrame {
 		cont.add(cost_t);
 		cont.add(cost);//
 		cont.add(button);
+		 
+		 
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
                 String item0 = (String) comboBox0.getSelectedItem();// получаем выбор
@@ -114,7 +127,7 @@ public class Window extends JFrame {
            } 
          
      
-                
+                System.out.println(Zapusk.whatalog);
                 tb=r.answer(item0);
                 km=r.answer(item3);
                 ko=r.answer(item4);

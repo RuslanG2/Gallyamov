@@ -1,15 +1,14 @@
 
 
-
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import javax.swing.*;
-import java.util.*;
+
 
 public class Zapusk extends JFrame {
 	
-
+	public static String whatalog;
 	public JLabel log= new JLabel("Логин") ;
 	public JLabel password = new JLabel("Пароль") ;
 
@@ -21,7 +20,7 @@ public class Zapusk extends JFrame {
 	public JPanel panel;
 
 	static int col;
-	private Scanner sc;
+	
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		new Zapusk();
@@ -41,10 +40,6 @@ public class Zapusk extends JFrame {
 		login = new JTextField("Введите логин");
 	
 		
-		sc = new Scanner(new File("src/main/resources/pass.txt"));
-		String slogin, spass;
-		slogin = sc.nextLine();
-		spass = sc.nextLine();
 		
 		String hintlogin = "Введите логин";
 		login.addFocusListener(new FocusAdapter() {
@@ -97,24 +92,94 @@ public class Zapusk extends JFrame {
 		ProgressBarRotating progressBarRotating=new ProgressBarRotating();
 		enter.addActionListener(new ActionListener() {                                                         
 			public void actionPerformed(ActionEvent e) {  
-				if (login.getText().equals(slogin) && pass.getText().equals(spass)) {		
-						dispose();//закрывает окно
-						Window click = new Window();
-						click.setVisible(true);
-				} else {
-					login.setBackground(Color.PINK);
-					pass.setBackground(Color.PINK);
-					pass.setText("Введите пароль");
-					pass.setEchoChar((char)0);	
-					if (!progressBarRotating.isAlive())
-				    progressBarRotating.start();
-					else {
-						if (col > 5) {
-							col = 0;
+				
+				
+				
+				
+					
+					int count1 = 0;
+					String password = new String(pass.getPassword());
+					try {
+	//Добавление файла из которого считываются логины
+						File file = new File("src/main/resources/pass.txt");
+	// создаем объект FileReader для объекта File
+						FileReader fr = new FileReader(file);
+	// создаем BufferedReader с существующего FileReader для построчного считывания
+						BufferedReader reader = new BufferedReader(fr);
+	// считаем сначала первую строку
+						String line = reader.readLine();
+						int id = 0;
+						String l = "";
+						for (int i = 0; i < 6; i++) {
+							if (line.startsWith("L:")) {
+								String[] logi = line.split(":");
+								l = logi[1];
+							} 
+								
+							// Поиск введенного логина среди существующих
+							if (l.equalsIgnoreCase(login.getText())) {
+								id = i;
+								break;
+							}
+							else {
+								line = reader.readLine();
+							}
 						}
+						reader.close();
+
+	//Добавление файла из которого считываются пароли
+						File file1 = new File("src/main/resources/pass.txt");
+	// создаем объект FileReader для объекта File
+						FileReader fr1 = new FileReader(file1);
+	// создаем BufferedReader с существующего FileReader для построчного считывания
+						BufferedReader reader1 = new BufferedReader(fr1);
+	// считаем сначала первую строку
+						String line1 = reader1.readLine();
+
+						String p = "";
+						int svyaz = 0;
+						for (int j = 0; j < 6; j++) {
+							if (line1.startsWith("P:")) {
+								String[] parol = line1.split(":");
+								p = parol[1];
+								svyaz = j;
+							}
+							if ((p.equalsIgnoreCase(password)) && (svyaz == (id + 1))) {
+								count1 = 1;
+							} else {
+	// считываем остальные строки в цикле
+								line1 = reader1.readLine();
+							}
+							// Поиск введенного логина среди существующих
+
+						}
+						reader1.close();
+						whatalog=login.getText();
+						if (count1 == 1) {
+							dispose();//закрывает окно
+							Window click = new Window();
+							click.setVisible(true);
+						} else {
+							login.setBackground(Color.PINK);
+								pass.setBackground(Color.PINK);
+								pass.setText("Введите пароль");
+								pass.setEchoChar((char)0);	
+								if (!progressBarRotating.isAlive())
+							    progressBarRotating.start();
+								else {
+									if (col > 5) {
+										col = 0;
+									}
+								}
+
+						}
+					} catch (FileNotFoundException e1) {
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						e1.printStackTrace();
 					}
 				}
-			} 	    	                             
+			 	    	                             
 		}); 
 		
 		setVisible(true);
