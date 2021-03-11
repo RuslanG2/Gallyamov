@@ -16,10 +16,8 @@ public class Window extends JFrame {
 	private double kt;//  территориальный коэффициент 
 	private double kp;// коэффициент периода использования транспорта 
 	private double kbm;//  коэффициент бонус-малус
-
+	
 	Raschet r = new Raschet();
-	
-	
 	
 	
 	JComboBox<String> comboBox0 = new JComboBox<String>(r.items0);
@@ -32,6 +30,7 @@ public class Window extends JFrame {
 	JComboBox<String> comboBox5 = new JComboBox<String>(r.items5);
 	JComboBox<String> comboBox6 = new JComboBox<String>(r.items6);
 	
+
 	//Кнопки
 	private JButton button = new JButton ("Расчитать");
 	private JLabel label0 = new JLabel ("Категория");
@@ -61,9 +60,11 @@ public class Window extends JFrame {
 		System.out.println(Zapusk.whatalog);
 		cont.add(label0);
 		if(Zapusk.whatalog.equalsIgnoreCase("user1")) {
-		cont.add(comboBox01);}
+			comboBox0=comboBox01;
+		cont.add(comboBox0);}
 		if(Zapusk.whatalog.equalsIgnoreCase("user2")) {
-			cont.add(comboBox02);}
+			comboBox0=comboBox02;
+			cont.add(comboBox0);}
 		if(Zapusk.whatalog.equalsIgnoreCase("admin")) {
 			cont.add(comboBox0);}
 		cont.add(label);
@@ -86,7 +87,8 @@ public class Window extends JFrame {
 		 
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-                String item0 = (String) comboBox0.getSelectedItem();// получаем выбор
+				
+				String item0 = (String) comboBox0.getSelectedItem();// получаем выбор
                 String item = (String) comboBox.getSelectedItem();// получаем выбор
                 String item2 = (String) comboBox2.getSelectedItem();// получаем выбор
                 String item3 = (String) comboBox3.getSelectedItem();// получаем выбор
@@ -127,8 +129,8 @@ public class Window extends JFrame {
            } 
          
      
-                System.out.println(Zapusk.whatalog);
-                tb=r.answer(item0);
+             
+				tb=r.answer(item0);
                 km=r.answer(item3);
                 ko=r.answer(item4);
                 kt=1.72;
