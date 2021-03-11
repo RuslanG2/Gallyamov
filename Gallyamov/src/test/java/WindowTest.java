@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class RaschetTest2 {
+public class WindowTest {
 
 	@Test
 	public void test() {
